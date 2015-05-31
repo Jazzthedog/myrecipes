@@ -26,7 +26,19 @@ class RecipesController  < ApplicationController
     end
   end
   
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+  
   def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+      #do something
+      flash[:success] = "You've successfully this recipe"
+      redirect_to recipe_path(@recipe)         # that the "show" path!
+    else
+      render :edit                            # take them back to edit form
+    end
   end
   
   private
