@@ -41,6 +41,14 @@ class RecipesController  < ApplicationController
     end
   end
   
+  def like
+    @recipe = Recipe.find(params[:id])
+    Like.create(like: params[:like], chef: Chef.first, recipe: @recipe)
+    flash[:success] = "You recipe was updated successfully"
+    redirect_to :back
+  end
+
+  
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.
