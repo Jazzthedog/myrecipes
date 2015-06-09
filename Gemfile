@@ -31,6 +31,7 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.2.7'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'bcrypt', '3.1.7'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
