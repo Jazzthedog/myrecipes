@@ -1,4 +1,9 @@
 class ChefsController  < ApplicationController
+
+  def index
+    @chefs = Chef.paginate(page: params[:page], per_page: 3)
+  end
+  
   def new
     # register will get handed create action
     @chef = Chef.new
@@ -31,7 +36,7 @@ class ChefsController  < ApplicationController
   
   def show
     @chef = Chef.find(params[:id])
-    
+    @recipes = @chef.recipes.paginate(page: params[:page], per_page: 3)
   end
   
 
