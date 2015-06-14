@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
+  # to be able to access these methods in our "views"
   helper_method :current_user, :logged_in?
   
   def current_user
