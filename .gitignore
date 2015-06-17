@@ -15,5 +15,11 @@
 /log/*.log
 /tmp
 
+#attempting to fix push to heruko
+/tmp/*
+!/tmp/cache/
+/tmp/cache/*
+!/tmp/cache/.keep
+
 # Ignore all cloud9 and hidden files
 .c9/
