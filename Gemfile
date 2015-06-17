@@ -45,3 +45,5 @@ group :production do
   gem 'rails_12factor'
 end
 
+#maybe a heruko fix?
+gem 'CFPropertyList', '2.3.1'
