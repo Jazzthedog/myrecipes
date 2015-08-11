@@ -53,6 +53,11 @@ class RecipesController  < ApplicationController
     end
   end
 
+  def destroy
+    Recipe.find(params[:id]).destroy
+    flash[:success] = "Recipe successfully deleted!"
+    redirect_to recipes_path
+  end
   
   private
 
@@ -71,5 +76,16 @@ class RecipesController  < ApplicationController
     		redirect_to recipes_path
     	end
     end    
+    
+    def require_user_like
+      if !logged_in?
+        flash[:danger] = "You must be logged in to perform that action"
+        redirect_to :back
+      end
+    end
+    
+    def admin_user
+      redirect_to recipes_path unless current_user.admin?
+    end
     
 end
