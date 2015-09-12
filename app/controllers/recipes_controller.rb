@@ -32,6 +32,7 @@ class RecipesController  < ApplicationController
   end
   
   def edit
+    # don't need edit
   end
   
   def update
